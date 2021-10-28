@@ -22,7 +22,7 @@ public class PatientRestAPI {
 	private String title = "Patients Microservice";
 	@Autowired
 	private PatientService patientService;
-	@RequestMapping("/hello")
+	@RequestMapping("hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;
@@ -32,12 +32,12 @@ public class PatientRestAPI {
 	public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
 		return new ResponseEntity<>(patientService.addPatient(patient), HttpStatus.OK);	
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Patient> updatePatient(@PathVariable(value = "id") int id, @RequestBody Patient patient){
 		return new ResponseEntity<>(patientService.updatePatient(id, patient), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deletePatient(@PathVariable(value = "id") int id) {
 		return new ResponseEntity<>(patientService.deletePatient(id), HttpStatus.OK);

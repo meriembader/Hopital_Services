@@ -1,12 +1,21 @@
 package com.microservices.provider;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+
 
 @Service
 public class ProviderService {
 	@Autowired
 	private ProviderRepository providerRepository;
+	
+
+	public Collection<Provider> getAllProvider() {
+        return providerRepository.findAll();
+	}
 	
 	public Provider addProvider(Provider provider) {
 		return providerRepository.save(provider);
