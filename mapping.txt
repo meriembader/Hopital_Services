@@ -1,10 +1,10 @@
-medicals-service /api/medicals/ 8000
-
 reclamations-service /api/reclamations/ 8100
 
 commandes-service /api/commandes/ 8200
 
 staffs-service /api/staffs/   8300
+
+medicals-service /api/medicals/ 8400
 
 medicaments-service /api/medicaments/ 8500
 
