@@ -17,7 +17,7 @@ Gestion des patients : Cette opération consiste à consulter, ajouter, modifier
 Gestion des rendez-vous : Cette opération consiste à consulter, ajouter, modifier et supprimer les rendez-vous entre les patients et les médecins de l’hopitale selon leurs disponibilités  ainsi  notifier les médecins de leurs futurs Rendez-vous .
 
 
-******************* SERVICES ROUTES **************************
+******************* **SERVICES ROUTES** **************************
 
 reclamations-service /api/reclamations/ 8100
 
@@ -39,7 +39,7 @@ admins-service /api/admins/ 8900
 
 commandes-node /api/commandes_node/ 9000
 
-************************* Ligne de commande *****************
+************************* **Lignes de commande** *****************
  > docker run -d -p 8100:8100 --name reclamation-service microservices/reclalamtions:0.0.1-SNAPSHOT
  > docker ps 
  >image ls 
