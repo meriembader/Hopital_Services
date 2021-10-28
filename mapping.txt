@@ -1,5 +1,26 @@
+medicals-service /api/medicals/ 8000
+
+reclamations-service /api/reclamations/ 8100
+
 commandes-service /api/commandes/ 8200
+
+staffs-service /api/staffs/   8300
 
 medicaments-service /api/medicaments/ 8500
 
+providers-service /api/providers/ 8600
+
+rendez-vous-service /api/rendez-vous/ 8700
+
+patients-service /api/patients/ 8800
+
+admins-service /api/admins/ 8900
+
 commandes-node /api/commandes_node/ 9000
+
+
+
+
+
+
+
