@@ -99,6 +99,16 @@
             "mainClass": "com.microservices.staff.StaffApplication",
             "projectName": "staff",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ReclamationsApplication<reclamations>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.reclamations.ReclamationsApplication",
+            "projectName": "reclamations",
+            "args": ""
         }
     ]
 }

@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/reclamations/")
+@RequestMapping(value = "/api/reclamations")
 public class ReclamationRestAPI {
 	private String title = "Reclamation Microservice";
 	@Autowired
 	private ReclamationService reclamationService;
 	
-	@GetMapping("")
+	@GetMapping()
 	public List<Reclamation> sayHello() {
 		return reclamationService.getAllReclamation();
 	}
