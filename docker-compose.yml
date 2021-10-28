@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  eureka-server:
+    image: foxward/eureka-server:v1
+    mem_limit: 700m
+    ports:
+      - "8761:8761"
+    networks:
+      - hospital-network
+
+  api-gateway:
+    image: foxward/api-gateway:v1
+    mem_limit: 700m
+    ports:
+      - "8765:8765"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+
+networks:
+  hospital-network:
