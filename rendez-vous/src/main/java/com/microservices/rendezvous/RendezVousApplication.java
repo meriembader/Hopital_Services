@@ -1,11 +1,9 @@
-package com.example.microservices.rendezvous;
+package com.microservices.rendezvous;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
 public class RendezVousApplication {
 
 	public static void main(String[] args) {
