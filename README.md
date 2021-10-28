@@ -17,3 +17,31 @@ Gestion des patients : Cette opération consiste à consulter, ajouter, modifier
 Gestion des rendez-vous : Cette opération consiste à consulter, ajouter, modifier et supprimer les rendez-vous entre les patients et les médecins de l’hopitale selon leurs disponibilités  ainsi  notifier les médecins de leurs futurs Rendez-vous .
 
 
+******************* SERVICES ROUTES **************************
+
+reclamations-service /api/reclamations/ 8100
+
+commandes-service /api/commandes/ 8200
+
+staffs-service /api/staffs/   8300
+
+medicals-service /api/medicals/ 8400
+
+medicaments-service /api/medicaments/ 8500
+
+providers-service /api/providers/ 8600
+
+rendez-vous-service /api/rendez-vous/ 8700
+
+patients-service /api/patients/ 8800
+
+admins-service /api/admins/ 8900
+
+commandes-node /api/commandes_node/ 9000
+
+
+
+
+
+
+
