@@ -1,4 +1,4 @@
-# Hopital_Services ( architecture microServices [spring Boot])
+# Hopital_Services ( architecture microServices [spring Boot| DOCKER | API GateWay | NodeJS ])
 
 
 
@@ -39,6 +39,7 @@ admins-service /api/admins/ 8900
 
 commandes-node /api/commandes_node/ 9000
 
+************************* Ligne de commande *****************
 
 
 
