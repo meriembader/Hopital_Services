@@ -1,4 +1,4 @@
-package com.example.microservices.rendezvous;
+package com.microservices.rendezvous;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
