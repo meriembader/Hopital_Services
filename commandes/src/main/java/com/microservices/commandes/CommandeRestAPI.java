@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/commandes")
+@RequestMapping(value = "/api/commandes/")
 public class CommandeRestAPI {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class CommandeRestAPI {
 		return new ResponseEntity<>(commandeService.getAllCommande(), HttpStatus.OK);	
 	}
 
-	@GetMapping({"/{id}"})
+	@GetMapping({"{id}"})
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<CommandeDTO> getCommandeById(@PathVariable ("id") int id) {
 		return new ResponseEntity<>(commandeService.getCommandeById(id), HttpStatus.OK);	
@@ -45,12 +45,12 @@ public class CommandeRestAPI {
 	public ResponseEntity<Commande> createCommande(@RequestBody Commande commande) {
 		return new ResponseEntity<>(commandeService.addCommande(commande), HttpStatus.OK);	
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Commande> updateCommande(@PathVariable(value = "id") int id, @RequestBody Commande commande){
 		return new ResponseEntity<>(commandeService.updateCommande(id, commande), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deleteCommande(@PathVariable(value = "id") int id) {
 		return new ResponseEntity<>(commandeService.deleteCommande(id), HttpStatus.OK);

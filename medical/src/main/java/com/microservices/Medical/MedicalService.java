@@ -39,9 +39,9 @@ public class MedicalService {
 	public String deleteMedical(int id) {
 		if(medicalRepository.findById(id).isPresent()) {
 			medicalRepository.deleteById(id);
-			return "Provider Deleted";
+			return "medical Deleted";
 		} else
-			return "Provider not Deleted";
+			return "medical not Deleted";
 	}
 
 
