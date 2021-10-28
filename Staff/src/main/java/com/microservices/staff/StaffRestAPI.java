@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
-@RequestMapping(value= "/staff")
+@RequestMapping(value= "/api/staffs/")
 public class StaffRestAPI {
 	private String title="Hello, I'm the candidate Microservice";
 	@Autowired 
 	private StaffService staffService;
-	@RequestMapping("/hello")
+	@RequestMapping("hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;}
@@ -33,17 +33,17 @@ public class StaffRestAPI {
         System.out.println("-------> : getAllTheStaff");
         return  staffService.getAllStaff();
     }
-	@PostMapping(value = "/addstaff", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "addstaff", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Staff> createStaff(@RequestBody Staff staff){
 		return new ResponseEntity<>(staffService.addStaff(staff),HttpStatus.OK);
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Staff> updateStaff(@PathVariable(value = "id") int id, @RequestBody Staff staff){
 		return new ResponseEntity<> (staffService.updateStaff(id, staff),HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deleteStaff(@PathVariable(value = "id") int id){
 		return new ResponseEntity<> (staffService.deleteStaff(id),HttpStatus.OK);
