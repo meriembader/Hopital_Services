@@ -1,4 +1,4 @@
-package com.microservices.commandes;
+package com.microservices.commandes.models;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -18,23 +18,23 @@ public class Commande implements Serializable {
 	private float totalprice;
 	private String name;
 	
-	public Commande(int idC, int idM, int totalQty, float totalprice, String desc) {
+	public Commande(int idM, int totalQty, float totalprice, String name) {
 		super();
-		this.id = idC;
 		this.idM = idM;
 		this.totalQty = totalQty;
 		this.totalprice = totalprice;
-		this.name = desc;
+		this.name = name;
 	}
 
 	public Commande() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Commande(String desc) {
+	public Commande(String name, int idM) {
 		super();
-		this.name = desc;
+		this.name = name;
+		this.idM = idM;
 	}
 
 	public int getId() {
@@ -69,12 +69,12 @@ public class Commande implements Serializable {
 		this.totalprice = totalprice;
 	}
 
-	public String getDesc() {
+	public String getName() {
 		return name;
 	}
 
-	public void setDesc(String desc) {
-		this.name = desc;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

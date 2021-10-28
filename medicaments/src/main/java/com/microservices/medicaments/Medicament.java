@@ -13,7 +13,8 @@ public class Medicament implements Serializable {
 	@Id
 	@GeneratedValue
 	private int id;
-	private String name,description;
+	private String name;
+	public String description;
 	private float price;
 	private int qty;
 	

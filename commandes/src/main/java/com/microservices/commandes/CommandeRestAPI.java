@@ -1,5 +1,9 @@
 package com.microservices.commandes;
 import java.util.Collection;
+import java.util.List;
+
+import com.microservices.commandes.models.Commande;
+import com.microservices.commandes.models.CommandeDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,13 +23,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api/commandes")
 public class CommandeRestAPI {
-	private String title = "Commande Microservice";
+
 	@Autowired
 	private CommandeService commandeService;
-	@RequestMapping("/hello")
-	public String sayHello() {
-		System.out.println(title);
-		return title;
+
+
+	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<List<Commande>> getAllCommande() {
+		return new ResponseEntity<>(commandeService.getAllCommande(), HttpStatus.OK);	
+	}
+
+	@GetMapping({"/{id}"})
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<CommandeDTO> getCommandeById(@PathVariable ("id") int id) {
+		return new ResponseEntity<>(commandeService.getCommandeById(id), HttpStatus.OK);	
 	}
 	
 	@PostMapping
@@ -43,11 +55,6 @@ public class CommandeRestAPI {
 	public ResponseEntity<String> deleteCommande(@PathVariable(value = "id") int id) {
 		return new ResponseEntity<>(commandeService.deleteCommande(id), HttpStatus.OK);
 	}
-	@GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public  Collection<Commande>  getAll() {
-        System.out.println("-------> : getAllAdmin");
-        return  commandeService.getAllCommande();
-    }
+
 
 }

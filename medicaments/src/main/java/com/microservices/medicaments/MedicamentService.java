@@ -1,5 +1,7 @@
 package com.microservices.medicaments;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,15 @@ public class MedicamentService {
 	@Autowired
 	private MedicamentRepository medicamentRepository;
 	
+	public List<Medicament> getAllMedicament() {
+		return medicamentRepository.findAll();
+	}
+
+
+	public Medicament getMedicamentById(int id) {
+		return medicamentRepository.findById(id).orElseThrow();
+	}
+
 	public Medicament addMedicament(Medicament medicament) {
 		return medicamentRepository.save(medicament);
 	}
