@@ -21,6 +21,124 @@ services:
     environment:
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
 
+  admins-service:
+    image: foxward/admin:v1
+    mem_limit: 700m
+    ports:
+      - "8900:8900"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+  
+  commandes-service:
+    image: foxward/commandes:v1
+    mem_limit: 700m
+    ports:
+      - "8200:8200"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+      - medicaments-service
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+  medicales-service:
+    image: foxward/medical:v1
+    mem_limit: 700m
+    ports:
+      - "8400:8400"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+  medicaments-service:
+    image: foxward/medicament:v1
+    mem_limit: 700m
+    ports:
+      - "8500:8500"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+    patients-service:
+    image: foxward/patient:v1
+    mem_limit: 700m
+    ports:
+      - "8800:8800"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+    provider-service:
+    image: foxward/provider:v1
+    mem_limit: 700m
+    ports:
+      - "8600:8600"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+    reclamations-service:
+    image: foxward/reclamation:v1
+    mem_limit: 700m
+    ports:
+      - "8100:8100"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+    rendez-vous-service:
+    image: foxward/medicament:v1
+    mem_limit: 700m
+    ports:
+      - "8700:8700"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
+    staffs-service:
+    image: foxward/staff:v1
+    mem_limit: 700m
+    ports:
+      - "8300:8300"
+    networks:
+      - hospital-network
+    depends_on:
+      - eureka-server
+      - api-gateway
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://eureka-server:8761/eureka
+
 
 networks:
   hospital-network:

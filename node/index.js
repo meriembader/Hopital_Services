@@ -4,9 +4,9 @@ const eurekaHelper = require('./eureka-helper');
 const app=express();
 
 const port=9000;
-const url= "mongodb://localhost:27017";
+const url= "mongodb+srv://foxward:foxward@cluster0.wfs0s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect(url,{useNewUrlParser: true});
+mongoose.connect(url,{ useUnifiedTopology: true });
 const con= mongoose.connection;
 app.use(express.json());
 try{
