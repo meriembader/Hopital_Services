@@ -1,0 +1,5 @@
+commandes-service /api/commandes/ 8200
+
+medicaments-service /api/medicaments/ 8500
+
+commandes-node /api/commandes_node/ 9000
