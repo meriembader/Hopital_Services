@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/medicals")
+@RequestMapping(value = "/api/medicals/")
 public class MedicalRestAPI {
 	private String title = "Hello, I'm the provider Microservice";
 	@Autowired
 	private MedicalService medicalService;
-	@RequestMapping("/hello")
+	@RequestMapping("hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;
@@ -41,12 +41,12 @@ public class MedicalRestAPI {
 	public ResponseEntity<Medical> createMedical(@RequestBody Medical medical) {
 		return new ResponseEntity<>(medicalService.addMedical(medical), HttpStatus.OK);	
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Medical> updateMedical(@PathVariable(value = "id") int id, @RequestBody Medical medical){
 		return new ResponseEntity<>(medicalService.updateMedical(id, medical), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deleteMedical(@PathVariable(value = "id") int id) {
 		return new ResponseEntity<>(medicalService.deleteMedical(id), HttpStatus.OK);

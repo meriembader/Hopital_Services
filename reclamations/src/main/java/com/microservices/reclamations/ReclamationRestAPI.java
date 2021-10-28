@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/reclamations")
+@RequestMapping(value = "/api/reclamations/")
 public class ReclamationRestAPI {
 	private String title = "Reclamation Microservice";
 	@Autowired
@@ -35,12 +35,12 @@ public class ReclamationRestAPI {
 	public ResponseEntity<Reclamation> createReclamation(@RequestBody Reclamation reclamation) {
 		return new ResponseEntity<>(reclamationService.addReclamation(reclamation), HttpStatus.OK);	
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Reclamation> updatePatient(@PathVariable(value = "id") Long id, @RequestBody Reclamation reclamation){
 		return new ResponseEntity<>(reclamationService.updateReclamation(id, reclamation), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deleteMedicament(@PathVariable(value = "id") Long id) {
 		return new ResponseEntity<>(reclamationService.deleteReclamation(id), HttpStatus.OK);

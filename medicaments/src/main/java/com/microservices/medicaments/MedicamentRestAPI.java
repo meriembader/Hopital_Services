@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/medicaments")
+@RequestMapping(value = "/api/medicaments/")
 public class MedicamentRestAPI {
 	
 	@Autowired
@@ -31,7 +31,7 @@ public class MedicamentRestAPI {
 		return new ResponseEntity<>(medicamentService.getAllMedicament(), HttpStatus.OK);	
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Medicament> getMedicamentById(@PathVariable ("id") int id) {
 		return new ResponseEntity<>(medicamentService.getMedicamentById(id), HttpStatus.OK);	
@@ -42,12 +42,12 @@ public class MedicamentRestAPI {
 	public ResponseEntity<Medicament> createMedicament(@RequestBody Medicament medicament) {
 		return new ResponseEntity<>(medicamentService.addMedicament(medicament), HttpStatus.OK);	
 	}
-	@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<Medicament> updateMedicament(@PathVariable(value = "id") int id, @RequestBody Medicament medicament){
 		return new ResponseEntity<>(medicamentService.updateMedicament(id, medicament), HttpStatus.OK);
 	}
-	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<String> deleteMedicament(@PathVariable(value = "id") int id) {
 		return new ResponseEntity<>(medicamentService.deleteMedicament(id), HttpStatus.OK);
