@@ -41,8 +41,14 @@ commandes-node /api/commandes_node/ 9000
 
 ************************* **Lignes de commande** *****************
  > docker run -d -p 8100:8100 --name reclamation-service microservices/reclalamtions:0.0.1-SNAPSHOT
+
+
  > docker ps 
- >image ls 
+
+
+ >image ls
+ 
+ 
  >npm install 
 
 
