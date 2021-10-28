@@ -21,7 +21,7 @@ try{
 
 
 const commandesrouter= require("./routes/commandes");
-app.use('/api/commandes/',commandesrouter)
+app.use('/api/commandes',commandesrouter)
 
 
 

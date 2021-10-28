@@ -39,6 +39,66 @@
             "mainClass": "com.microservices.medicaments.MedicamentsApplication",
             "projectName": "medicaments",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AdminApplication<admin>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.admin.AdminApplication",
+            "projectName": "admin",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MedicalApplication<Medical>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.Medical.MedicalApplication",
+            "projectName": "Medical",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PatientApplication<Patient>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.patient.PatientApplication",
+            "projectName": "Patient",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProviderApplication<Provider>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.provider.ProviderApplication",
+            "projectName": "Provider",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RendezVousApplication<rendez-vous>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.rendezvous.RendezVousApplication",
+            "projectName": "rendez-vous",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StaffApplication<staff>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.microservices.staff.StaffApplication",
+            "projectName": "staff",
+            "args": ""
         }
     ]
 }

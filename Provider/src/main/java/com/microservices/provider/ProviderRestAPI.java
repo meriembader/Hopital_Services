@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/providers/")
+@RequestMapping(value = "/api/providers")
 public class ProviderRestAPI {
 	private String title = "Hello, I'm the provider Microservice";
 	@Autowired
 	private ProviderService providerService;
-	@RequestMapping("hello")
+	@RequestMapping("/hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;

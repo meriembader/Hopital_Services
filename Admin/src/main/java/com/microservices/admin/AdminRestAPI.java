@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
-@RequestMapping(value= "/api/admins/")
+@RequestMapping(value= "/api/admins")
 public class AdminRestAPI {
 	private String title="Hello, I'm the admin Microservice";
 	@Autowired 

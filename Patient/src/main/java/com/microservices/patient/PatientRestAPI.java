@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(value = "/api/patients/")
+@RequestMapping(value = "/api/patients")
 public class PatientRestAPI {
 
 	private String title = "Patients Microservice";
 	@Autowired
 	private PatientService patientService;
-	@RequestMapping("hello")
+	@RequestMapping("/hello")
 	public String sayHello() {
 		System.out.println(title);
 		return title;

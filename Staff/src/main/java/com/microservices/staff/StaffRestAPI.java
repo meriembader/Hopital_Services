@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @RestController
-@RequestMapping(value= "/staff")
+@RequestMapping(value= "/api/staffs")
 public class StaffRestAPI {
 	private String title="Hello, I'm the candidate Microservice";
 	@Autowired 
